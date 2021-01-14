@@ -51,7 +51,7 @@ function coverArea(w)
      if Y%2 == 1 then
          w.left()
          w.left()
-         for x in range(X+1) do w.forward() end
+         for x in range(X-1) do w.forward() end
      end
      w.left()
      for y in range(Y) do w.forward() end
@@ -81,18 +81,18 @@ function level()
 
      -- Move down to first block we can find
      while not turtle.detectDown() and turtle.down() do
-         depth = depth + 1
+         depth = depth
      end
 
      -- Remove top block
      turtle.digDown()
      turtle.down()
-     depth = depth + 1
+     depth = depth
 
      -- Dig down to first non-dirt block we can find
      turtle.select(1)
      while (turtle.compareDown() and turtle.digDown() and turtle.down()) or turtle.down() do
-         depth = depth + 1
+         depth = depth
      end
 
      -- Start filling
