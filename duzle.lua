@@ -51,7 +51,7 @@ function coverArea(w)
      if Y%2 == 1 then
          w.left()
          w.left()
-         for x in range(X) do w.forward() end
+         for x in range(X+1) do w.forward() end
      end
      w.left()
      for y in range(Y) do w.forward() end
